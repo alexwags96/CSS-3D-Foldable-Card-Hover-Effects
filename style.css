@@ -1,0 +1,105 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body
+{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #222;
+}
+
+.card
+{
+    position: relative;
+    height: 400px;
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+    box-shadow: 10px 20px 40px rgb(255,255,255,0.25) ;
+    transition: 0.5s;
+}
+.card:hover
+{
+    transform: translateX(50%);
+}
+.imgBox
+{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: rgb(0,0,0,0.25);
+    z-index: 1;
+    transform-origin: left;
+    transform-style: preserve-3d;
+    transition: 1s;
+    box-shadow: 10px 20px 40px rgb(255,255,255,0.25) ;
+    
+}
+.imgBox img
+{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+}
+
+.card:hover .imgBox
+{
+    transform: rotateY(-180deg);
+    
+}
+.imgBox img:nth-child(2)
+{
+    transform: rotateY(180deg);
+}
+.content
+{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.content h2{
+    text-align: center;
+    font-weight: 700;
+    line-height: 1em;
+}
+.content h2 span
+{
+    color: #e21212;
+    font-size: 0.8em;
+}
+.content .social-icons{
+    position: relative;
+    display: flex;
+    margin-top: 10px;
+}
+.content .social-icons a{
+    /* display: inline-block; */
+    width: 35px;
+    height: 35px;
+    background: #333;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    margin: 5px;
+    font-size: 18px;
+    transition: 0.2s;
+}
+.content .social-icons a:hover
+{
+    background: #e21212 ;
+}
